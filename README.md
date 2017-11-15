@@ -1,6 +1,6 @@
 ## Ship's Log
 
-![](https://gph.is/1WQZnH3)
+![](https://media.giphy.com/media/l0G16x3EuzEywCY8g/giphy.gif)
 
 ## Contributing
 
