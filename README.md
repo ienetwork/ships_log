@@ -14,6 +14,6 @@
 
 ## Usage
 
-1. Add `gem "ships-log", :git => 'git@github.com:ienetwork/bow-rails.git'` to your Gemfile
+1. Add `gem "ships-log", :git => 'git@github.com:ienetwork/ships_log.git'` to your Gemfile
 2. Run `bundle`
 3. Reference constants as needed
