@@ -252,6 +252,7 @@ class ShipsLog < Rails::Railtie
       'default' => 'Webhook GET',
       'webhook_post' => 'Webhook POST',
       'applicant' => 'ApplicInt',
+      'protective' => 'Protective',
       'typeform' => 'TypeForm',
       'formassembly' => 'FormAssembly',
       '123_contact_form' => '123 Contact Form',
