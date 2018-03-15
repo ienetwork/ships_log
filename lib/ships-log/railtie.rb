@@ -251,6 +251,7 @@ class ShipsLog < Rails::Railtie
     QUOTE_ACTIONS = {
       'default' => 'Webhook GET',
       'webhook_post' => 'Webhook POST',
+      'simple_url' => 'Simple URL (No Data Payload)',
       'applicant' => 'ApplicInt',
       'protective' => 'Protective',
       'typeform' => 'TypeForm',
