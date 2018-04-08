@@ -424,6 +424,15 @@ class ShipsLog < Rails::Railtie
       ]
     }
 
+    AGENT_INFORMATION_FIELDS = [
+      'email',
+      'first_name',
+      'insurance_license_number',
+      'last_name',
+      'middle_name',
+      'phone'
+    ]
+
     SMS_PHONE_NUMBER = "+18012141509"
   end
 end

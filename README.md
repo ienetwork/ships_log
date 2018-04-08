@@ -8,7 +8,7 @@
 2. Go into the project's root directory
 3. Make changes
 4. Bump the version
-5. Run `gem build ships_log.gemspec`
+5. Run `gem build ships-log.gemspec`
 6. Commit and push changes
 
 
