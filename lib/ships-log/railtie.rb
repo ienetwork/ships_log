@@ -434,5 +434,18 @@ class ShipsLog < Rails::Railtie
     ]
 
     SMS_PHONE_NUMBER = "+18012141509"
+
+    FORMULA_TYPES_BY_PRODUCT_TYPE = {
+      "Term" => [
+        'base_premium',
+        'adb_rider_fee',
+        'wop_rider_fee',
+        'child_rider_fee',
+        'child_wop_rider_fee',
+        'policy_fee',
+        'flat_extra_fee',
+        'total_formula'
+      ]
+    }
   end
 end
