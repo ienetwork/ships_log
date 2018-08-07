@@ -435,12 +435,24 @@ class ShipsLog < Rails::Railtie
 
     SMS_PHONE_NUMBER = "+18012141509"
 
+    DEFAULT_FORMULAS = {
+      "Life" => {
+        "base_premium" => "round((AGE_RATE * FACE_AMOUNT_IN_THOUSANDS * MODAL_FACTOR), 2)",
+        "policy_fee" => "round((POLICY_FEE * MODAL_FACTOR), 2)",
+        "table_rate_fee" => "round((BASE_PREMIUM * TABLE_RATE_PERCENT), 2)",
+        "adb_rider_fee" => "round(((MAX_BENEFIT_COVERAGE / 1000) * RIDER_RATE) * MODAL_FACTOR, 2)",
+        "wop_rider_fee" => "round((RIDER_RATE * FACE_AMOUNT_IN_THOUSANDS * MODAL_FACTOR), 2)",
+        "child_rider_fee" => "round((RIDER_RATE * CHILD_RIDER_UNITS * MODAL_FACTOR), 2)",
+        "child_wop_rider_fee" => "round((RIDER_RATE * CHILD_RIDER_UNITS * MODAL_FACTOR), 2)",
+        "flat_extra_fee" => "round((FLAT_EXTRA_TOTAL * MODAL_FACTOR), 2)",
+        "total" => "round((BASE_PREMIUM + POLICY_FEE + TABLE_RATE_FEE + FLAT_EXTRA_FEE + ADB_RIDER_FEE + WOP_RIDER_FEE + CHILD_RIDER_FEE + CHILD_WOP_RIDER_FEE), 2)"
+      }
+    }
     # these keys should match the LIFE_PRODUCT_TYPES values
     FORMULA_TYPE_DETAILS_BY_PRODUCT_TYPE = {
       "Term" => {
         "base_premium" => {
           "label" => "Base Premium",
-          "default" => "round((AGE_RATE * FACE_AMOUNT_IN_THOUSANDS * MODAL_FACTOR), 2)",
           "variables" => [
             "AGE_RATE",
             "FACE_AMOUNT_IN_THOUSANDS",
@@ -449,7 +461,6 @@ class ShipsLog < Rails::Railtie
         },
         "policy_fee" => {
           "label" => "Policy Fee",
-          "default" => "round((POLICY_FEE * MODAL_FACTOR), 2)",
           "variables" => [
             "MODAL_FACTOR",
             "POLICY_FEE"
@@ -457,7 +468,6 @@ class ShipsLog < Rails::Railtie
         },
         "table_rate_fee" => {
           "label" => "Table Rate Fee",
-          "default" => "round((BASE_PREMIUM * TABLE_RATE_PERCENT), 2)",
           "variables" => [
             "AGE_RATE",
             "BASE_PREMIUM",
@@ -468,7 +478,6 @@ class ShipsLog < Rails::Railtie
         },
         "adb_rider_fee" => {
           "label" => "ADB Rider Fee",
-          "default" => "round(((MAX_BENEFIT_COVERAGE / 1000) * RIDER_RATE) * MODAL_FACTOR, 2)",
           "variables" => [
             "MAX_BENEFIT_COVERAGE",
             "MODAL_FACTOR",
@@ -477,7 +486,6 @@ class ShipsLog < Rails::Railtie
         },
         "wop_rider_fee" => {
           "label" => "WOP Rider Fee",
-          "default" => "round((RIDER_RATE * FACE_AMOUNT_IN_THOUSANDS * MODAL_FACTOR), 2)",
           "variables" => [
             "ADB_RIDER_FEE",
             "BASE_PREMIUM",
@@ -492,7 +500,6 @@ class ShipsLog < Rails::Railtie
         },
         "child_rider_fee" => {
           "label" => "Child Rider Fee",
-          "default" => "round((RIDER_RATE * CHILD_RIDER_UNITS * MODAL_FACTOR), 2)",
           "variables" => [
             "CHILD_RIDER_UNITS",
             "COVERAGE_PER_UNIT",
@@ -502,7 +509,6 @@ class ShipsLog < Rails::Railtie
         },
         "child_wop_rider_fee" => {
           "label" => "Combined Child/WOP Rider Fee",
-          "default" => "round((RIDER_RATE * CHILD_RIDER_UNITS * MODAL_FACTOR), 2)",
           "variables" => [
             "CHILD_RIDER_UNITS",
             "MODAL_FACTOR",
@@ -511,7 +517,6 @@ class ShipsLog < Rails::Railtie
         },
         "flat_extra_fee" => {
           "label" => "Flat Extra Fee",
-          "default" => "round((FLAT_EXTRA_TOTAL * MODAL_FACTOR), 2)",
           "variables" => [
             "FLAT_EXTRA_TOTAL",
             "MODAL_FACTOR"
@@ -519,7 +524,6 @@ class ShipsLog < Rails::Railtie
         },
         "total" => {
           "label" => "Total",
-          "default" => "round((BASE_PREMIUM + POLICY_FEE + TABLE_RATE_FEE + FLAT_EXTRA_FEE + ADB_RIDER_FEE + WOP_RIDER_FEE + CHILD_RIDER_FEE + CHILD_WOP_RIDER_FEE), 2)",
           "variables" => [
             "ADB_RIDER_FEE",
             "BASE_PREMIUM",
@@ -536,7 +540,6 @@ class ShipsLog < Rails::Railtie
       "UL" => {
         "base_premium" => {
           "label" => "Base Premium",
-          "default" => "round((AGE_RATE * FACE_AMOUNT_IN_THOUSANDS * MODAL_FACTOR), 2)",
           "variables" => [
             "AGE_RATE",
             "FACE_AMOUNT_IN_THOUSANDS",
@@ -545,7 +548,6 @@ class ShipsLog < Rails::Railtie
         },
         "policy_fee" => {
           "label" => "Policy Fee",
-          "default" => "round((POLICY_FEE * MODAL_FACTOR), 2)",
           "variables" => [
             "MODAL_FACTOR",
             "POLICY_FEE"
@@ -553,7 +555,6 @@ class ShipsLog < Rails::Railtie
         },
         "table_rate_fee" => {
           "label" => "Table Rate Fee",
-          "default" => "round((BASE_PREMIUM * TABLE_RATE_PERCENT), 2)",
           "variables" => [
             "AGE_RATE",
             "BASE_PREMIUM",
@@ -564,7 +565,6 @@ class ShipsLog < Rails::Railtie
         },
         "adb_rider_fee" => {
           "label" => "ADB Rider Fee",
-          "default" => "round(((MAX_BENEFIT_COVERAGE / 1000) * RIDER_RATE) * MODAL_FACTOR, 2)",
           "variables" => [
             "MAX_BENEFIT_COVERAGE",
             "MODAL_FACTOR",
@@ -573,7 +573,6 @@ class ShipsLog < Rails::Railtie
         },
         "wop_rider_fee" => {
           "label" => "WOP Rider Fee",
-          "default" => "round((RIDER_RATE * FACE_AMOUNT_IN_THOUSANDS * MODAL_FACTOR), 2)",
           "variables" => [
             "ADB_RIDER_FEE",
             "BASE_PREMIUM",
@@ -588,7 +587,6 @@ class ShipsLog < Rails::Railtie
         },
         "child_rider_fee" => {
           "label" => "Child Rider Fee",
-          "default" => "round((RIDER_RATE * CHILD_RIDER_UNITS * MODAL_FACTOR), 2)",
           "variables" => [
             "CHILD_RIDER_UNITS",
             "COVERAGE_PER_UNIT",
@@ -598,7 +596,6 @@ class ShipsLog < Rails::Railtie
         },
         "child_wop_rider_fee" => {
           "label" => "Combined Child/WOP Rider Fee",
-          "default" => "round((RIDER_RATE * CHILD_RIDER_UNITS * MODAL_FACTOR), 2)",
           "variables" => [
             "CHILD_RIDER_UNITS",
             "MODAL_FACTOR",
@@ -607,7 +604,6 @@ class ShipsLog < Rails::Railtie
         },
         "flat_extra_fee" => {
           "label" => "Flat Extra Fee",
-          "default" => "round((FLAT_EXTRA_TOTAL * MODAL_FACTOR), 2)",
           "variables" => [
             "FLAT_EXTRA_TOTAL",
             "MODAL_FACTOR"
@@ -615,7 +611,6 @@ class ShipsLog < Rails::Railtie
         },
         "total" => {
           "label" => "Total",
-          "default" => "round((BASE_PREMIUM + POLICY_FEE + TABLE_RATE_FEE + FLAT_EXTRA_FEE + ADB_RIDER_FEE + WOP_RIDER_FEE + CHILD_RIDER_FEE + CHILD_WOP_RIDER_FEE), 2)",
           "variables" => [
             "ADB_RIDER_FEE",
             "BASE_PREMIUM",
