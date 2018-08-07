@@ -444,6 +444,7 @@ class ShipsLog < Rails::Railtie
         'child_wop_rider_fee',
         'policy_fee',
         'flat_extra_fee',
+        'table_rate_fee',
         'total_formula'
       ]
     }
