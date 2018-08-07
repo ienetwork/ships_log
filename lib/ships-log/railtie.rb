@@ -435,8 +435,105 @@ class ShipsLog < Rails::Railtie
 
     SMS_PHONE_NUMBER = "+18012141509"
 
+    # these keys should match the LIFE_PRODUCT_TYPES values
     FORMULA_TYPE_DETAILS_BY_PRODUCT_TYPE = {
       "Term" => {
+        "base_premium" => {
+          "label" => "Base Premium",
+          "default" => "round((AGE_RATE * FACE_AMOUNT_IN_THOUSANDS * MODAL_FACTOR), 2)",
+          "variables" => [
+            "AGE_RATE",
+            "FACE_AMOUNT_IN_THOUSANDS",
+            "MODAL_FACTOR"
+          ]
+        },
+        "policy_fee" => {
+          "label" => "Policy Fee",
+          "default" => "round((POLICY_FEE * MODAL_FACTOR), 2)",
+          "variables" => [
+            "MODAL_FACTOR",
+            "POLICY_FEE"
+          ]
+        },
+        "table_rate_fee" => {
+          "label" => "Table Rate Fee",
+          "default" => "round((BASE_PREMIUM * TABLE_RATE_PERCENT), 2)",
+          "variables" => [
+            "AGE_RATE",
+            "BASE_PREMIUM",
+            "FACE_AMOUNT_IN_THOUSANDS",
+            "MODAL_FACTOR",
+            "TABLE_RATE_PERCENT"
+          ]
+        },
+        "adb_rider_fee" => {
+          "label" => "ADB Rider Fee",
+          "default" => "round(((MAX_BENEFIT_COVERAGE / 1000) * RIDER_RATE) * MODAL_FACTOR, 2)",
+          "variables" => [
+            "MAX_BENEFIT_COVERAGE",
+            "MODAL_FACTOR",
+            "RIDER_RATE"
+          ]
+        },
+        "wop_rider_fee" => {
+          "label" => "WOP Rider Fee",
+          "default" => "round((RIDER_RATE * FACE_AMOUNT_IN_THOUSANDS * MODAL_FACTOR), 2)",
+          "variables" => [
+            "ADB_RIDER_FEE",
+            "BASE_PREMIUM",
+            "CHILD_RIDER_FEE",
+            "FACE_AMOUNT_IN_THOUSANDS",
+            "FLAT_EXTRA_FEE",
+            "MODAL_FACTOR",
+            "POLICY_FEE",
+            "RIDER_RATE",
+            "TABLE_RATE_FEE"
+          ]
+        },
+        "child_rider_fee" => {
+          "label" => "Child Rider Fee",
+          "default" => "round((RIDER_RATE * CHILD_RIDER_UNITS * MODAL_FACTOR), 2)",
+          "variables" => [
+            "CHILD_RIDER_UNITS",
+            "COVERAGE_PER_UNIT",
+            "MODAL_FACTOR",
+            "RIDER_RATE"
+          ]
+        },
+        "child_wop_rider_fee" => {
+          "label" => "Combined Child/WOP Rider Fee",
+          "default" => "round((RIDER_RATE * CHILD_RIDER_UNITS * MODAL_FACTOR), 2)",
+          "variables" => [
+            "CHILD_RIDER_UNITS",
+            "MODAL_FACTOR",
+            "RIDER_RATE"
+          ]
+        },
+        "flat_extra_fee" => {
+          "label" => "Flat Extra Fee",
+          "default" => "round((FLAT_EXTRA_TOTAL * MODAL_FACTOR), 2)",
+          "variables" => [
+            "FLAT_EXTRA_TOTAL",
+            "MODAL_FACTOR"
+          ]
+        },
+        "total" => {
+          "label" => "Total",
+          "default" => "round((BASE_PREMIUM + POLICY_FEE + TABLE_RATE_FEE + FLAT_EXTRA_FEE + ADB_RIDER_FEE + WOP_RIDER_FEE + CHILD_RIDER_FEE + CHILD_WOP_RIDER_FEE), 2)",
+          "variables" => [
+            "ADB_RIDER_FEE",
+            "BASE_PREMIUM",
+            "CHILD_RIDER_FEE",
+            "CHILD_WOP_RIDER_FEE",
+            "FLAT_EXTRA_FEE",
+            "MODAL_FACTOR",
+            "POLICY_FEE",
+            "TABLE_RATE_FEE",
+            "WOP_RIDER_FEE"
+          ]
+        }
+      },
+      "UL" => {
         "base_premium" => {
           "label" => "Base Premium",
           "default" => "round((AGE_RATE * FACE_AMOUNT_IN_THOUSANDS * MODAL_FACTOR), 2)",
