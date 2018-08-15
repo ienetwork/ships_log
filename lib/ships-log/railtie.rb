@@ -626,7 +626,7 @@ class ShipsLog < Rails::Railtie
       }
     }
 
-    TIMEZONES: [
+    TIMEZONES = [
       { label: "International Date Line West", value: "Pacific/Midway" },
       { label: "Midway Island", value: "Pacific/Midway" },
       { label: "American Samoa", value: "Pacific/Pago_Pago" },
