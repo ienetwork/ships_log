@@ -779,4 +779,11 @@ class ShipsLog < Rails::Railtie
       { "label" => "Samoa", "value" => "Pacific/Apia" }
     ]
   end
+
+  PAYMENT_MODES = [
+    { "label" => "Monthly", "value" => "monthly" },
+    { "label" => "Quarterly", "value" => "quarterly" },
+    { "label" => "Semi-Annual", "value" => "semi_annual" },
+    { "label" => "Annual", "value" => "annual" }
+  ]
 end
