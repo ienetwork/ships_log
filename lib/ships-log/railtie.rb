@@ -265,6 +265,8 @@ class ShipsLog < Rails::Railtie
       "google_form" => "Google Form"
     }
 
+    PROTECTIVE_ETICKET_SUPPORTED_PRODUCTS = [42, 39, 2161, 2164, 40, 2162, 2163, 2165, 1412, 43]
+
     APPLICINT_CARRIERS = {
       "1500" => [
         "714",
