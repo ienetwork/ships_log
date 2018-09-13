@@ -788,4 +788,13 @@ class ShipsLog < Rails::Railtie
     { "label" => "Semi-Annual", "value" => "semi_annual" },
     { "label" => "Annual", "value" => "annual" }
   ]
+
+  NOTIFICATION_TRIGGERS = [
+    { "label" => "E-ticket Created", "value" => "eticket_created" },
+    { "label" => "E-ticket Sent", "value" => "eticket_sent" },
+    { "label" => "E-ticket Error", "value" => "eticket_error" },
+    { "label" => "Lead Created", "value" => "lead_created" },
+    { "label" => "Lead Updated", "value" => "lead_updated" },
+    { "label" => "Member Created", "value" => "member_created" }
+  ]
 end
