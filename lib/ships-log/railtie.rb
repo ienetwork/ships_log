@@ -795,6 +795,7 @@ class ShipsLog < Rails::Railtie
     { "label" => "E-ticket Error", "value" => "eticket_error" },
     { "label" => "Lead Created", "value" => "lead_created" },
     { "label" => "Lead Updated", "value" => "lead_updated" },
-    { "label" => "Member Created", "value" => "member_created" }
+    { "label" => "Member Created", "value" => "member_created" },
+    { "label" => "Underwriting Pre-screener Submitted", "value" => "uwp_created" }
   ]
 end
