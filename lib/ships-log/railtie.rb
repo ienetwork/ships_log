@@ -267,163 +267,608 @@ class ShipsLog < Rails::Railtie
 
     PROTECTIVE_ETICKET_SUPPORTED_PRODUCTS = [42, 39, 2161, 2164, 40, 2162, 2163, 2165, 1412, 43]
 
-    APPLICINT_CARRIERS = {
-      "1500" => [
-        "714",
-        "708",
-        "713",
-        "712",
-        "727",
-        "709",
-        "710",
-        "711",
-        "177",
-        "178",
-        "179",
-        "180",
-        "181"
-      ],
-      "139" => [
-        "175",
-        "2175",
-        "2177",
-        "2172",
-        "2174",
-        "2176",
-        "2091",
-        "2173",
-        "1093",
-        "1098",
-        "1094",
-        "1095",
-        "1085",
-        "1086",
-        "1121",
-        "1108",
-        "1109",
-        "176"
-      ],
-      "140" => [
-        "120",
-        "118",
-        "119",
-        "129",
-        "134",
-        "557",
-        "558",
-        "559",
-        "561",
-        "1987",
-        "1988",
-        "1989",
-        "1990",
-        "1991",
-        "1992",
-        "1993",
-        "1994",
-        "1995",
-        "1996",
-        "1997",
-        "1998",
-        "1999"
-      ],
-      "111" => [
-        "157",
-        "158",
-        "159",
-        "2092",
-        "161"
-      ],
-      "186" => [
-        "687",
-        "688",
-        "689",
-        "690",
-        "691"
-      ],
-      "49" => [
-        "875",
-        "876",
-        "877",
-        "2065",
-        "2066",
-        "880",
-        "883",
-        "885"
-      ],
-      "99" => [
-        "1228",
-        "2025",
-        "2026",
-        "2027",
-        "2028",
-        "2029",
-        "1224",
-        "1227",
-        "1932",
-        "1933",
-        "1934"
-      ],
-      "1700" => [
-
-      ],
-      "69" => [
-        "39",
-        "40",
-        "1412",
-        "42",
-        "43",
-        "1383",
-        "1384",
-        "1385",
-        "53",
-        "54",
-        "1380",
-        "1389",
-        "1403",
-        "1404",
-        "1388"
-      ],
-      "193" => [
-        "1472",
-        "1473",
-        "1474",
-        "1475",
-        "1476"
-      ],
-      "92" => [
-        "1757",
-        "1750",
-        "1758",
-        "1751",
-        "1759",
-        "1752",
-        "1760",
-        "1754",
-        "1755"
-      ],
-      "194" => [
-        "1950",
-        "1951",
-        "1952",
-        "1731",
-        "1732",
-        "1968",
-        "1969",
-        "1970",
-        "1971",
-        "1973",
-        "1976",
-        "1975",
-        "1974"
-      ],
-      "195" => [
-        "166",
-        "167",
-        "168",
-        "2100",
-        "169"
-      ]
+    APPLICINT_CARRIERS => {
+      "140" => {
+        "code" => "AMGE # American General",
+        "products" => {
+          "120" => {
+            "code" => "ATRG",
+            "name" => "Select-a-Term - 10 Year (2016)"
+          },
+          "118" => {
+            "code" => "ATRG",
+            "name" => "Select-a-Term - 15 Year (2016)"
+          },
+          "119" => {
+            "code" => "ATRG",
+            "name" => "Select-a-Term - 20 Year (2016)"
+          },
+          "129" => {
+            "code" => "ATRG",
+            "name" => "Select-a-Term - 25 Year (2016)"
+          },
+          "134" => {
+            "code" => "ATRG",
+            "name" => "Select-a-Term - 30 Year (2016)"
+          },
+          # "" => {
+          #   "code" => "ARTG",
+          #   "name" => "ROP Select-a-Term - 20 Year"
+          # },
+          # "" => {
+          #   "code" => "ARTG",
+          #   "name" => "ROP Select-a-Term - 25 Year"
+          # },
+          # "" => {
+          #   "code" => "ARTG",
+          #   "name" => "ROP Select-a-Term - 30 Year"
+          # }
+        }
+      },
+      "111" => {
+        "code" => "BANN",
+        "products" => {
+          "157" => {
+            "code" => "BONS",
+            "name" => "OPTerm 10 - 10 Year Term"
+          },
+          "158" => {
+            "code" => "BONS",
+            "name" => "OPTerm 15 - 15 Year Term"
+          },
+          "159" => {
+            "code" => "BONS",
+            "name" => "OPTerm 20 - 20 Year"
+          },
+          "2092" => {
+            "code" => "BONS",
+            "name" => "OPTerm 25 - 25 Year"
+          },
+          "161" => {
+            "code" => "BONS",
+            "name" => "OPTerm 30 - 30 Year Term"
+          }
+        }
+      },
+      "186" => {
+        "code" => "CETN",
+        "products" => {
+          "687" => {
+            "code" => "CETN",
+            "name" => "T-10/10 - 10 Year Term"
+          },
+          "688" => {
+            "code" => "CETN",
+            "name" => "T-15/15 - 15 Year Term"
+          },
+          "689" => {
+            "code" => "CETN",
+            "name" => "T-20/20 - 20 Year Term"
+          },
+          "690" => {
+            "code" => "CETN",
+            "name" => "T-25/25 - 25 Year Term"
+          },
+          "691" => {
+            "code" => "CETN",
+            "name" => "T-30/30 - 30 Year Term"
+          }
+          # "" => {
+          #   "code" => "WHOLE_LIFE",
+          #   "name" => "Whole life"
+          # }
+        }
+      },
+      "49"  :
+        "code" => "JOHU",
+        "products" => {
+          # "" => {
+          #   "code" => "JHT17R",
+          #   "name" => "Term 10",
+          # "" => {
+          #   "code" => "JHT17R",
+          #   "name" => "Term 15",
+          # "" => {
+          #   "code" => "JHT17R",
+          #   "name" => "Term 20",
+          # "" => {
+          #   "code" => "JHT17R",
+          #   "name" => "Term 10 (UPR)",
+          # "" => {
+          #   "code" => "JHT17R",
+          #   "name" => "Term 15 (UPR)",
+          # "" => {
+          #   "code" => "JHT17R",
+          #   "name" => "Term 20 (UPR)",
+          # "" => {
+          #   "code" => "JHT17VR",
+          #   "name" => "Term 10 with Vitality",
+          # "" => {
+          #   "code" => "JHT17VR",
+          #   "name" => "Term 15 with Vitality",
+          # "" => {
+          #   "code" => "JHT17VR",
+          #   "name" => "Term 20 with Vitality",
+          # "" => {
+          #   "code" => "JHT17VR",
+          #   "name" => "Term 10 with Vitality (UPR)",
+          # "" => {
+          #   "code" => "JHT17VR",
+          #   "name" => "Term 15 with Vitality (UPR)",
+          # "" => {
+          #   "code" => "JHT17VR",
+          #   "name" => "Term 20 with Vitality (UPR)"
+          "875" => {
+            "code" => "JHT18",
+            "name" => "Term 10"
+          },
+          "876" => {
+            "code" => "JHT18",
+            "name" => "Term 15"
+          },
+          "877" => {
+            "code" => "JHT18",
+            "name" => "Term 20"
+          },
+          # "" => {
+          #   "code" => "JHT18",
+          #   "name" => "Term 10 (UPR)",
+          # "" => {
+          #   "code" => "JHT18",
+          #   "name" => "Term 15 (UPR)",
+          # "" => {
+          #   "code" => "JHT18",
+          #   "name" => "Term 20 (UPR)"
+          "2251" => {
+            "code" => "JHT18",
+            "name" => "Term 10 (HER)"
+          },
+          "2252" => {
+            "code" => "JHT18",
+            "name" => "Term 15 (HER)"
+          },
+          "2253" => {
+            "code" => "JHT18",
+            "name" => "Term 20 (HER)"
+          },
+          "880" => {
+            "code" => "JHT18V",
+            "name" => "Term 10 with Vitality"
+          },
+          "883" => {
+            "code" => "JHT18V",
+            "name" => "Term 15 with Vitality"
+          },
+          "885" => {
+            "code" => "JHT18V",
+            "name" => "Term 20 with Vitality"
+          }
+          # "" => {
+          #   "code" => "JHT18V",
+          #   "name" => "Term 10 with Vitality (UPR)",
+          # "" => {
+          #   "code" => "JHT18V",
+          #   "name" => "Term 15 with Vitality (UPR)",
+          # "" => {
+          #   "code" => "JHT18V",
+          #   "name" => "Term 20 with Vitality (UPR)",
+        }
+      },
+      "69" => {
+        "code" => "PROT",
+        "products" => {
+          "2161" => {
+            "code" => "PROT",
+            "name" => "Protective Classic Choice Term 10"
+          },
+          "2162" => {
+            "code" => "PROT",
+            "name" => "Protective Classic Choice Term 15"
+          },
+          "2163" => {
+            "code" => "PROT",
+            "name" => "Protective Classic Choice Term 20"
+          },
+          "2164" => {
+            "code" => "PROT",
+            "name" => "Protective Classic Choice Term 25"
+          },
+          "2165" => {
+            "code" => "PROT",
+            "name" => "Protective Classic Choice Term 30"
+          },
+          "39" => {
+            "code" => "PTCL",
+            "name" => "Custom Choice UL - 10 Year No Lapse"
+          },
+          "40" => {
+            "code" => "PTCL",
+            "name" => "Custom Choice UL - 15 Year No Lapse"
+          },
+          "1412" => {
+            "code" => "PTCL",
+            "name" => "Custom Choice No Lapse UL - 20 Year"
+          },
+          "42" => {
+            "code" => "PTCL",
+            "name" => "Custom Choice UL - 25 Year No Lapse"
+          },
+          "43" => {
+            "code" => "PTCL",
+            "name" => "Custom Choice UL - 30 Year No Lapse"
+          },
+          # "" => {
+          #   "code" => "PROT_IUL",
+          #   "name" => "Indexed Choice UL"
+          "1383" => {
+            "code" => "PTAL",
+            "name" => "Advantage Choice UL 2/16 - to age 90"
+          },
+          "1384" => {
+            "code" => "PTAL",
+            "name" => "Advantage Choice UL 2/16 - to age 95"
+          },
+          "1385" => {
+            "code" => "PTAL",
+            "name" => "Advantage Choice UL 2/16 - to age 100"
+          },
+          "53" => {
+            "code" => "PTAL",
+            "name" => "Advantage Choice UL 2/16 - to age 105"
+          },
+          "54" => {
+            "code" => "PTAL",
+            "name" => "Advantage Choice UL 2/16 - to age 110"
+          },
+          "1380" => {
+            "code" => "PTAL",
+            "name" => "Advantage Choice UL 2/16 - to age 121"
+          },
+          "1389" => {
+            "code" => "PTAL",
+            "name" => "Advantage Choice UL 2/16 - Pay to 65"
+          },
+          "1403" => {
+            "code" => "PTAL",
+            "name" => "Advantage Choice UL 2/16 - 20 Pay"
+          },
+          "1404" => {
+            "code" => "PTAL",
+            "name" => "Advantage Choice UL 2/16 - 10 Pay"
+          },
+          "1388" => {
+            "code" => "PTAL",
+            "name" => "Advantage Choice UL 2/16 - Single Pay"
+          }
+        }
+      },
+      "193" => {
+        "code" => "SAVE",
+        "products" => {
+          "1472" => {
+            "code" => "SAVE",
+            "name" => "T-10/10 - 10 Year Term"
+          },
+          "1473" => {
+            "code" => "SAVE",
+            "name" => "T-15/15 - 15 Year Term"
+          },
+          "1474" => {
+            "code" => "SAVE",
+            "name" => "T-20/20 - 20 Year Term"
+          },
+          "1475" => {
+            "code" => "SAVE",
+            "name" => "T-25/25 - 25 Year Term"
+          },
+          "1476" => {
+            "code" => "SAVE",
+            "name" => "T-30/30 - 30 Year Term"
+          }
+          # "" => {
+          #   "code" => "WHOLE_LIFE",
+          #   "name" => "Whole life",
+        }
+      },
+      "92" => {
+        "code" => "UTOM",
+        "products" => {
+          "1757" => {
+            "code" => "UTPP",
+            "name" => "Term Life Answers 10"
+          },
+          "1750" => {
+            "code" => "UTEP",
+            "name" => "SI - Term Life Express - 10 Year"
+          },
+          "1758" => {
+            "code" => "UTPP",
+            "name" => "Term Life Answers 15"
+          },
+          "1751" => {
+            "code" => "UTEP",
+            "name" => "SI - Term Life Express - 15 Year"
+          },
+          "1759" => {
+            "code" => "UTPP",
+            "name" => "Term Life Answers 20"
+          },
+          "1752" => {
+            "code" => "UTEP",
+            "name" => "SI - Term Life Express - 20 Year"
+          },
+          "1760" => {
+            "code" => "UTPP",
+            "name" => "Term Life Answers 30"
+          },
+          "1754" => {
+            "code" => "UTEP",
+            "name" => "SI - Term Life Express - 20 Year w/ROP"
+          },
+          "1755" => {
+            "code" => "UTEP",
+            "name" => "SI - Term Life Express - 30 Year w/ROP"
+          }
+        }
+      },
+      "195" => {
+        "code" => "WILP",
+        "products" => {
+          "166" => {
+            "code" => "WOLR",
+            "name" => "OpTerm 10"
+          },
+          "167" => {
+            "code" => "WOLR",
+            "name" => "OpTerm 15"
+          },
+          "168" => {
+            "code" => "WOLR",
+            "name" => "OpTerm 20"
+          },
+          "2100" => {
+            "code" => "WOLR",
+            "name" => "OpTerm 25"
+          },
+          "169" => {
+            "code" => "WOLR",
+            "name" => "OpTerm 30"
+          }
+        }
+      },
+      "99" => {
+        "code" => "PACL",
+        "products" => {
+          # "" => {
+          #   "code" => "PACL",
+          #   "name" => "Pacific-ART - Annual Renewable Term"
+          "2025" => {
+            "code" => "PCPL",
+            "name" => "PL Promise Term 10"
+          },
+          "2026" => {
+            "code" => "PCPL",
+            "name" => "PL Promise Term 15"
+          },
+          "2027" => {
+            "code" => "PCPL",
+            "name" => "PL Promise Term 20"
+          },
+          "2028" => {
+            "code" => "PCPL",
+            "name" => "PL Promise Term 25"
+          },
+          "2029" => {
+            "code" => "PCPL",
+            "name" => "PL Promise Term 30"
+          }
+        }
+      },
+      "1700" => {
+        "code" => "PACK",
+        "products" => {
+          "1224" => {
+            "code" => "PACL",
+            "name" => "Pacific-ART-NY - Annual Renewable Term"
+          },
+          # "" => {
+          #   "code" => "PCAS",
+          #   "name" => "Pacific PRIME Term 10 NY (age 18-60 Std)"
+          "1227" => {
+            "code" => "PCAL",
+            "name" => "Pacific PRIME Term 10 NY"
+          },
+          "1932" => {
+            "code" => "PCAL",
+            "name" => "Pacific PRIME Term 15 NY"
+          },
+          "1933" => {
+            "code" => "PCAL",
+            "name" => "Pacific PRIME Term 20 NY"
+          },
+          "1934" => {
+            "code" => "PCAL",
+            "name" => "Pacific PRIME Term 30 NY"
+          }
+        }
+      },
+      "194" => {
+        "code" => "UTST",
+        "products" => {
+          "1950" => {
+            "code" => "USED",
+            "name" => "Select-a-Term - 10 Year  (2016)"
+          },
+          "1951" => {
+            "code" => "USED",
+            "name" => "Select-a-Term - 15 Year  (2016)"
+          },
+          "1952" => {
+            "code" => "USED",
+            "name" => "Select-a-Term - 20 Year  (2016)"
+          },
+          "1731" => {
+            "code" => "USED",
+            "name" => "Select-a-Term - 25 Year  (2016)"
+          },
+          "1732" => {
+            "code" => "USED",
+            "name" => "Select-a-Term - 30 Year  (2016)"
+          }
+        }
+      },
+      "139" => {
+        "code" => "NORA",
+        "products" => {
+          "1085" => {
+            "code" => "NDGA",
+            "name" => "ADDvantage 10"
+          },
+          "1086" => {
+            "code" => "NDGA",
+            "name" => "ADDvantage 15"
+          },
+          "175" => {
+            "code" => "NDGA",
+            "name" => "ADDvantage 20"
+          },
+          "176" => {
+            "code" => "NDGA",
+            "name" => "ADDvantage 30"
+          }
+          # "" => {
+          #   "code" => "NGGA",
+          #   "name" => "Custom Guarantee Gen 8 ($25-249K)",
+          # "" => {
+          #   "code" => "NGGA",
+          #   "name" => "Custom Guarantee Gen 8 - 1 pay ($25K+)",
+          # "" => {
+          #   "code" => "NGGA",
+          #   "name" => "Custom Guarantee Gen 8 - 10p ($25K+)",
+          # "" => {
+          #   "code" => "NGGA",
+          #   "name" => "Custom Guarantee Gen 8 - 20p ($25K+)",
+          # "" => {
+          #   "code" => "NGGA",
+          #   "name" => "Custom Guarantee Gen 8 - p100 ($25K+)",
+          # "" => {
+          #   "code" => "NGGA",
+          #   "name" => "Custom Guarantee Gen 8 - p65 ($25K+)",
+          # "" => {
+          #   "code" => "NGGA",
+          #   "name" => "Custom Guarantee Gen 8 to 90 ($25K+)",
+          # "" => {
+          #   "code" => "NGGA",
+          #   "name" => "Custom Guarantee Gen 8 to 95 ($25K+)",
+          # "" => {
+          #   "code" => "NHGA",
+          #   "name" => "Custom Guarantee Gen 8 ($250K plus)",
+          # "" => {
+          #   "code" => "NHGA",
+          #   "name" => "Custom Guarantee Gen 8 - 1 pay ($250K+)",
+          # "" => {
+          #   "code" => "NHGA",
+          #   "name" => "Custom Guarantee Gen 8 - 10p ($250K+)",
+          # "" => {
+          #   "code" => "NHGA",
+          #   "name" => "Custom Guarantee Gen 8 - 20p ($250K+)",
+          # "" => {
+          #   "code" => "NHGA",
+          #   "name" => "Custom Guarantee Gen 8 - p100 ($250K+)",
+          # "" => {
+          #   "code" => "NHGA",
+          #   "name" => "Custom Guarantee Gen 8 - p65 ($250K+)",
+          # "" => {
+          #   "code" => "NHGA",
+          #   "name" => "Custom Guarantee Gen 8 to 90 ($250K+)",
+          # "" => {
+          #   "code" => "NHGA",
+          #   "name" => "Custom Guarantee Gen 8 to 95 ($250K+)",
+          # "" => {
+          #   "code" => "NPGA",
+          #   "name" => "Guarantee Builder IUL4 ($250K plus)",
+          # "" => {
+          #   "code" => "NPGA",
+          #   "name" => "Guarantee Builder IUL4 ($250K+)",
+          # "" => {
+          #   "code" => "NPGA",
+          #   "name" => "Guarantee Builder IUL4 to 90 ($250K+)",
+          # "" => {
+          #   "code" => "NPGA",
+          #   "name" => "Guarantee Builder IUL4 to 95 ($250K+)",
+          # "" => {
+          #   "code" => "NUGA",
+          #   "name" => "Guarantee Builder IUL4 ($25-249K)",
+          # "" => {
+          #   "code" => "NUGA",
+          #   "name" => "Guarantee Builder IUL4 to 90 ($25-$249K)",
+          # "" => {
+          #   "code" => "NUGA",
+          #   "name" => "Guarantee Builder IUL4 to 95 ($25-$249K)",
+        }
+      },
+      "1500" => {
+        "code" => "CINN",
+        "products" => {
+          # "" => {
+          #   "code" => "CICN",
+          #   "name" => "LifeSetter UL - pay to 100 (CA)"
+          "714" => {
+            "code" => "CINN",
+            "name" => "LifeHorizons Guaranteed W/L - 10 Pay"
+          },
+          "713" => {
+            "code" => "CINN",
+            "name" => "LifeHorizons Guaranteed W/L - Pay 65"
+          },
+          # "" => {
+          #   "code" => "CINN",
+          #   "name" => "LifeHorizons Guaranteed W/L - Pay to 100"
+          "712" => {
+            "code" => "CINN",
+            "name" => "LifeHorizons Guaranteed W/L - Single Pay"
+          },
+          "177" => {
+            "code" => "CINN",
+            "name" => "LifeHorizons Termsetter 10"
+          },
+          "178" => {
+            "code" => "CINN",
+            "name" => "LifeHorizons Termsetter 15"
+          },
+          "179" => {
+            "code" => "CINN",
+            "name" => "LifeHorizons Termsetter 20"
+          },
+          "180" => {
+            "code" => "CINN",
+            "name" => "LifeHorizons Termsetter 25"
+          },
+          "181" => {
+            "code" => "CINN",
+            "name" => "LifeHorizons Termsetter 30"
+          },
+          "709" => {
+            "code" => "CINN",
+            "name" => "Termsetter ROP 20 Year"
+          },
+          "710" => {
+            "code" => "CINN",
+            "name" => "Termsetter ROP 25 Year (w/ROP)"
+          },
+          "711" => {
+            "code" => "CINN",
+            "name" => "Termsetter ROP 30 Year (w/ROP)"
+          },
+          # "" => {
+          #   "code" => "CINN_SUL",
+          #   "name" => "LifeHorizons Simplicity UL"
+          "727" => {
+            "code" => "CIUN",
+            "name" => "LifeSetter UL - pay to 100"
+          }
+        }
+      }
     }
 
     AGENT_INFORMATION_FIELDS = [
