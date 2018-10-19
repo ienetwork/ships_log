@@ -262,7 +262,8 @@ class ShipsLog < Rails::Railtie
       "jotform" => "Jotform",
       "formstack" => "FormStack",
       "wufoo" => "Wufoo",
-      "google_form" => "Google Form"
+      "google_form" => "Google Form",
+      "ixn_lead_form" => "IXN Lead Form"
     }
 
     PROTECTIVE_ETICKET_SUPPORTED_PRODUCTS = [42, 39, 2161, 2164, 40, 2162, 2163, 2165, 1412, 43]
