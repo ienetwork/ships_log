@@ -270,7 +270,7 @@ class ShipsLog < Rails::Railtie
 
     APPLICINT_CARRIERS = {
       140 => {
-        "code" => "AMGE # American General",
+        "code" => "AMGE" # American General,
         "products" => {
           120 => {
             "code" => "ATRG",
