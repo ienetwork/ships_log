@@ -248,23 +248,104 @@ class ShipsLog < Rails::Railtie
     STATE_SELECT_OPTIONS = []
     STATES.each { |abbr, full| STATE_SELECT_OPTIONS << [full, abbr] }
 
-    QUOTE_ACTIONS = {
-      "default" => "Webhook GET",
-      "webhook_post" => "Webhook POST",
-      "simple_url" => "Simple URL (No Data Payload)",
-      "applicant" => "ApplicInt",
-      "protective" => "Protective",
-      "typeform" => "TypeForm",
-      "formassembly" => "FormAssembly",
-      "123_contact_form" => "123 Contact Form",
-      "cognito_form" => "Cognito Form",
-      "formsite" => "Formsite",
-      "jotform" => "Jotform",
-      "formstack" => "FormStack",
-      "wufoo" => "Wufoo",
-      "google_form" => "Google Form",
-      "ixn_lead_form" => "IXN Lead Form"
-    }
+    QUOTE_ACTIONS = [
+      {
+        :value => "default",
+        :label => "Webhook GET",
+        :group => "Basic",
+        :products => ["WebsiteQuoter", "BgaQuoter", "MobileApp"]
+      },
+      {
+        :value => "webhook_post",
+        :label => "Webhook POST",
+        :group => "Basic",
+        :products => ["BgaQuoter"]
+      },
+      {
+        :value => "simple_url",
+        :label => "Simple URL (No Data Payload)",
+        :group => "Basic",
+        :products => ["BgaQuoter"]
+      },
+      {
+        :value => "applicant",
+        :label => "ApplicInt",
+        :group => "E-Ticket",
+        :products => ["BgaQuoter", "MobileApp"]
+      },
+      {
+        :value => "protective",
+        :label => "Protective",
+        :group => "E-Ticket",
+        :products => ["BgaQuoter", "MobileApp"]
+      },
+      {
+        :value => "typeform",
+        :label => "TypeForm",
+        :group => "Form",
+        :products => ["WebsiteQuoter", "BgaQuoter", "MobileApp"]
+      },
+      {
+        :value => "formassembly",
+        :label => "FormAssembly",
+        :group => "Form",
+        :products => ["WebsiteQuoter", "BgaQuoter", "MobileApp"]
+      },
+      {
+        :value => "123_contact_form",
+        :label => "123 Contact Form",
+        :group => "Form",
+        :products => ["WebsiteQuoter", "BgaQuoter", "MobileApp"]
+      },
+      {
+        :value => "cognito_form",
+        :label => "Cognito Form",
+        :group => "Form",
+        :products => ["WebsiteQuoter", "BgaQuoter", "MobileApp"]
+      },
+      {
+        :value => "formsite",
+        :label => "Formsite",
+        :group => "Form",
+        :products => ["WebsiteQuoter", "BgaQuoter", "MobileApp"]
+      },
+      {
+        :value => "jotform",
+        :label => "Jotform",
+        :group => "Form",
+        :products => ["WebsiteQuoter", "BgaQuoter", "MobileApp"]
+      },
+      {
+        :value => "formstack",
+        :label => "FormStack",
+        :group => "Form",
+        :products => ["WebsiteQuoter", "BgaQuoter", "MobileApp"]
+      },
+      {
+        :value => "wufoo",
+        :label => "Wufoo",
+        :group => "Form",
+        :products => ["WebsiteQuoter", "BgaQuoter", "MobileApp"]
+      },
+      {
+        :value => "google_form",
+        :label => "Google Form",
+        :group => "Form",
+        :products => ["WebsiteQuoter", "BgaQuoter", "MobileApp"]
+      },
+      {
+        :value => "ixn_lead_form",
+        :label => "IXN Lead Form",
+        :group => "CRM",
+        :products => ["WebsiteQuoter"]
+      },
+      {
+        :value => "insureio",
+        :label => "Insure.io",
+        :group => "CRM",
+        :products => ["WebsiteQuoter"]
+      }
+    ]
 
     PROTECTIVE_ETICKET_SUPPORTED_PRODUCTS = [42, 39, 2161, 2164, 40, 2162, 2163, 2165, 1412, 43]
 
