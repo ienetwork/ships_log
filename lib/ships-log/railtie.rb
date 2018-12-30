@@ -501,29 +501,29 @@ class ShipsLog < Rails::Railtie
           # "" => {
           #   "code" => "JHT18",
           #   "name" => "Term 20 (UPR)"
-          2251 => {
+          2237 => {
             "code" => "JHT18",
-            "name" => "Term 10 (HER)"
+            "name" => "Term 10 with Vitality Plus Rider"
           },
-          2252 => {
+          2238 => {
             "code" => "JHT18",
-            "name" => "Term 15 (HER)"
+            "name" => "Term 15 with Vitality Plus Rider"
           },
-          2253 => {
+          2239 => {
             "code" => "JHT18",
-            "name" => "Term 20 (HER)"
+            "name" => "Term 20 with Vitality Plus Rider"
           },
           880 => {
             "code" => "JHT18V",
-            "name" => "Term 10 with Vitality"
+            "name" => "Term 10 with Vitality Plus"
           },
           883 => {
             "code" => "JHT18V",
-            "name" => "Term 15 with Vitality"
+            "name" => "Term 15 with Vitality Plus"
           },
           885 => {
             "code" => "JHT18V",
-            "name" => "Term 20 with Vitality"
+            "name" => "Term 20 with Vitality Plus"
           }
           # "" => {
           #   "code" => "JHT18V",
