@@ -1152,7 +1152,94 @@ class ShipsLog < Rails::Railtie
             "WOP_RIDER_FEE"
           ]
         }
-      }
+      },
+      "Simplified Issue Term" => {
+        "base_premium" => {
+          "label" => "Base Premium",
+          "variables" => [
+            "AGE_RATE",
+            "FACE_AMOUNT_IN_THOUSANDS",
+            "MODAL_FACTOR"
+          ]
+        },
+        "policy_fee" => {
+          "label" => "Policy Fee",
+          "variables" => [
+            "MODAL_FACTOR",
+            "POLICY_FEE"
+          ]
+        },
+        "table_rate_fee" => {
+          "label" => "Table Rate Fee",
+          "variables" => [
+            "AGE_RATE",
+            "BASE_PREMIUM",
+            "FACE_AMOUNT_IN_THOUSANDS",
+            "MODAL_FACTOR",
+            "TABLE_RATE_PERCENT"
+          ]
+        },
+        "adb_rider_fee" => {
+          "label" => "ADB Rider Fee",
+          "variables" => [
+            "MAX_BENEFIT_COVERAGE",
+            "MODAL_FACTOR",
+            "RIDER_RATE"
+          ]
+        },
+        "wop_rider_fee" => {
+          "label" => "WOP Rider Fee",
+          "variables" => [
+            "ADB_RIDER_FEE",
+            "BASE_PREMIUM",
+            "CHILD_RIDER_FEE",
+            "FACE_AMOUNT_IN_THOUSANDS",
+            "FLAT_EXTRA_FEE",
+            "MODAL_FACTOR",
+            "POLICY_FEE",
+            "RIDER_RATE",
+            "TABLE_RATE_FEE"
+          ]
+        },
+        "child_rider_fee" => {
+          "label" => "Child Rider Fee",
+          "variables" => [
+            "CHILD_RIDER_UNITS",
+            "COVERAGE_PER_UNIT",
+            "MODAL_FACTOR",
+            "RIDER_RATE"
+          ]
+        },
+        "child_wop_rider_fee" => {
+          "label" => "Combined Child/WOP Rider Fee",
+          "variables" => [
+            "CHILD_RIDER_UNITS",
+            "MODAL_FACTOR",
+            "RIDER_RATE"
+          ]
+        },
+        "flat_extra_fee" => {
+          "label" => "Flat Extra Fee",
+          "variables" => [
+            "FLAT_EXTRA_TOTAL",
+            "MODAL_FACTOR"
+          ]
+        },
+        "total" => {
+          "label" => "Total",
+          "variables" => [
+            "ADB_RIDER_FEE",
+            "BASE_PREMIUM",
+            "CHILD_RIDER_FEE",
+            "CHILD_WOP_RIDER_FEE",
+            "FLAT_EXTRA_FEE",
+            "MODAL_FACTOR",
+            "POLICY_FEE",
+            "TABLE_RATE_FEE",
+            "WOP_RIDER_FEE"
+          ]
+        }
+      },
     }
 
     TIMEZONES = [
