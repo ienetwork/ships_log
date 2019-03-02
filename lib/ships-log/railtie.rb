@@ -183,70 +183,252 @@ class ShipsLog < Rails::Railtie
     IXN_HEALTH_CATEGORIES = ["Preferred Plus","Preferred","Standard Plus","Standard"]
     ALL_HEALTH_CATEGORIES = (IXN_HEALTH_CATEGORIES + ("A".."P").map { |letter| "Table #{letter}" }).freeze
 
-    STATES = {
-      "AL"=>"Alabama",
-      "AK"=>"Alaska",
-      "AS"=>"American Samoa",
-      "AZ"=>"Arizona",
-      "AR"=>"Arkansas",
-      "CA"=>"California",
-      "CO"=>"Colorado",
-      "CT"=>"Connecticut",
-      "DE"=>"Delaware",
-      "DC"=>"District of Columbia",
-      "FM"=>"Federated States of Micronesia",
-      "FL"=>"Florida",
-      "GA"=>"Georgia",
-      "GU"=>"Guam",
-      "HI"=>"Hawaii",
-      "ID"=>"Idaho",
-      "IL"=>"Illinois",
-      "IN"=>"Indiana",
-      "IA"=>"Iowa",
-      "KS"=>"Kansas",
-      "KY"=>"Kentucky",
-      "LA"=>"Louisiana",
-      "ME"=>"Maine",
-      "MH"=>"Marshal Islands",
-      "MD"=>"Maryland",
-      "MA"=>"Massachusetts",
-      "MI"=>"Michigan",
-      "MN"=>"Minnesota",
-      "MS"=>"Mississippi",
-      "MO"=>"Missouri",
-      "MT"=>"Montana",
-      "NE"=>"Nebraska",
-      "NV"=>"Nevada",
-      "NH"=>"New Hampshire",
-      "NJ"=>"New Jersey",
-      "NM"=>"New Mexico",
-      "NY"=>"New York",
-      "NC"=>"North Carolina",
-      "ND"=>"North Dakota",
-      "MP"=>"Northern Mariana Islands",
-      "OH"=>"Ohio",
-      "OK"=>"Oklahoma",
-      "OR"=>"Oregon",
-      "PW"=>"Palau",
-      "PA"=>"Pennsylvania",
-      "PR"=>"Puerto Rico",
-      "RI"=>"Rhode Island",
-      "SC"=>"South Carolina",
-      "SD"=>"South Dakota",
-      "TN"=>"Tennessee",
-      "TX"=>"Texas",
-      "UT"=>"Utah",
-      "VT"=>"Vermont",
-      "VI"=>"Virgin Islands",
-      "VA"=>"Virginia",
-      "WA"=>"Washington",
-      "WV"=>"West Virginia",
-      "WI"=>"Wisconsin",
-      "WY"=>"Wyoming"
+    STATE_DETAILS = {
+      "AL"=> {
+        :label => "Alabama",
+        :insureio_id => 1
+      },
+      "AK"=> {
+        :label => "Alaska",
+        :insureio_id => 2
+      },
+      "AS"=> {
+        :label => "American Samoa",
+        :insureio_id => 56
+      },
+      "AZ"=> {
+        :label => "Arizona",
+        :insureio_id => 3
+      },
+      "AR"=> {
+        :label => "Arkansas",
+        :insureio_id => 4
+      },
+      "CA"=> {
+        :label => "California",
+        :insureio_id => 5
+      },
+      "CO"=> {
+        :label => "Colorado",
+        :insureio_id => 6
+      },
+      "CT"=> {
+        :label => "Connecticut",
+        :insureio_id => 7
+      },
+      "DE"=> {
+        :label => "Delaware",
+        :insureio_id => 8
+      },
+      "DC"=> {
+        :label => "District of Columbia",
+        :insureio_id => 9
+      },
+      "FM"=> {
+        :label => "Federated States of Micronesia",
+        :insureio_id => nil
+      },
+      "FL"=> {
+        :label => "Florida",
+        :insureio_id => 10
+      },
+      "GA"=> {
+        :label => "Georgia",
+        :insureio_id => 11
+      },
+      "GU"=> {
+        :label => "Guam",
+        :insureio_id => 53
+      },
+      "HI"=> {
+        :label => "Hawaii",
+        :insureio_id => 12
+      },
+      "ID"=> {
+        :label => "Idaho",
+        :insureio_id => 13
+      },
+      "IL"=> {
+        :label => "Illinois",
+        :insureio_id => 14
+      },
+      "IN"=> {
+        :label => "Indiana",
+        :insureio_id => 15
+      },
+      "IA"=> {
+        :label => "Iowa",
+        :insureio_id => 16
+      },
+      "KS"=> {
+        :label => "Kansas",
+        :insureio_id => 17
+      },
+      "KY"=> {
+        :label => "Kentucky",
+        :insureio_id => 18
+      },
+      "LA"=> {
+        :label => "Louisiana",
+        :insureio_id => 19
+      },
+      "ME"=> {
+        :label => "Maine",
+        :insureio_id => 20
+      },
+      "MH"=> {
+        :label => "Marshal Islands",
+        :insureio_id => nil
+      },
+      "MD"=> {
+        :label => "Maryland",
+        :insureio_id => 21
+      },
+      "MA"=> {
+        :label => "Massachusetts",
+        :insureio_id => 22
+      },
+      "MI"=> {
+        :label => "Michigan",
+        :insureio_id => 23
+      },
+      "MN"=> {
+        :label => "Minnesota",
+        :insureio_id => 24
+      },
+      "MS"=> {
+        :label => "Mississippi",
+        :insureio_id => 25
+      },
+      "MO"=> {
+        :label => "Missouri",
+        :insureio_id => 26
+      },
+      "MT"=> {
+        :label => "Montana",
+        :insureio_id => 27
+      },
+      "NE"=> {
+        :label => "Nebraska",
+        :insureio_id => 28
+      },
+      "NV"=> {
+        :label => "Nevada",
+        :insureio_id => 29
+      },
+      "NH"=> {
+        :label => "New Hampshire",
+        :insureio_id => 30
+      },
+      "NJ"=> {
+        :label => "New Jersey",
+        :insureio_id => 31
+      },
+      "NM"=> {
+        :label => "New Mexico",
+        :insureio_id => 32
+      },
+      "NY"=> {
+        :label => "New York",
+        :insureio_id => 33
+      },
+      "NC"=> {
+        :label => "North Carolina",
+        :insureio_id => 35
+      },
+      "ND"=> {
+        :label => "North Dakota",
+        :insureio_id => 36
+      },
+      "MP"=> {
+        :label => "Northern Mariana Islands",
+        :insureio_id => nil
+      },
+      "OH"=> {
+        :label => "Ohio",
+        :insureio_id => 37
+      },
+      "OK"=> {
+        :label => "Oklahoma",
+        :insureio_id => 38
+      },
+      "OR"=> {
+        :label => "Oregon",
+        :insureio_id => 39
+      },
+      "PW"=> {
+        :label => "Palau",
+        :insureio_id => nil
+      },
+      "PA"=> {
+        :label => "Pennsylvania",
+        :insureio_id => 40
+      },
+      "PR"=> {
+        :label => "Puerto Rico",
+        :insureio_id => 54
+      },
+      "RI"=> {
+        :label => "Rhode Island",
+        :insureio_id => 41
+      },
+      "SC"=> {
+        :label => "South Carolina",
+        :insureio_id => 42
+      },
+      "SD"=> {
+        :label => "South Dakota",
+        :insureio_id => 43
+      },
+      "TN"=> {
+        :label => "Tennessee",
+        :insureio_id => 44
+      },
+      "TX"=> {
+        :label => "Texas",
+        :insureio_id => 45
+      },
+      "UT"=> {
+        :label => "Utah",
+        :insureio_id => 46
+      },
+      "VT"=> {
+        :label => "Vermont",
+        :insureio_id => 47
+      },
+      "VI"=> {
+        :label => "Virgin Islands",
+        :insureio_id => 55
+      },
+      "VA"=> {
+        :label => "Virginia",
+        :insureio_id => 48
+      },
+      "WA"=> {
+        :label => "Washington",
+        :insureio_id => 49
+      },
+      "WV"=> {
+        :label => "West Virginia",
+        :insureio_id => 50
+      },
+      "WI"=> {
+        :label => "Wisconsin",
+        :insureio_id => 51
+      },
+      "WY"=> {
+        :label => "Wyoming",
+        :insureio_id => 52
+      },
     }
 
+    STATES = {}
     STATE_SELECT_OPTIONS = []
-    STATES.each { |abbr, full| STATE_SELECT_OPTIONS << [full, abbr] }
+
+    STATE_DETAILS.each do |abbr, details|
+      STATES[abbr] = details[:label]
+      STATE_SELECT_OPTIONS << [details[:label], abbr]
+    end
 
     QUOTE_ACTIONS = [
       {
@@ -346,6 +528,131 @@ class ShipsLog < Rails::Railtie
         :products => ["WebsiteQuoter"]
       }
     ]
+
+    INSUREIO_HEALTH_CATEGORIES = {
+      "Preferred Plus" => {
+        :id => 1
+      },
+      "Preferred" => {
+        :id => 2
+      },
+      "Standard Plus" => {
+        :id => 3
+      },
+      "Standard" => {
+        :id => 4
+      },
+      "Preferred Tobacco" => {
+        :id => 5
+      },
+      "Standard Tobacco" => {
+        :id => 6
+      }
+    }
+
+    INSUREIO_PRODUCT_TYPES = {
+      "Term" => {
+        :id => 1
+      },
+      "Term ROP" => {
+        :id => 1
+      },
+      "UL" => {
+        :id => 2
+      },
+      "Whole Life" => {
+        :id => 3
+      },
+      "Simplified Issue Term" => {
+        :id => 8
+      },
+      "Final Expense" => {
+        :id => 1
+      }
+    }
+
+    INSUREIO_PRODUCT_CATEGORIES = {
+      "10 Year Term" => {
+        :id => 1,
+        :name => "10 years"
+      },
+      "15 Year Term" => {
+        :id => 2,
+        :name => "15 years"
+      },
+      "20 Year Term" => {
+        :id => 3,
+        :name => "20 years"
+      },
+      "25 Year Term" => {
+        :id => 4,
+        :name => "25 years"
+      },
+      "30 Year Term" => {
+        :id => 5,
+        :name => "30 years"
+      },
+      "40 Year Term" => {
+        :id => 6,
+        :name => "40 years"
+      },
+      "To age 65" => {
+        :id => 7,
+        :name => "To Age 65"
+      },
+      "To age 70" => {
+        :id => 8,
+        :name => "To Age 70"
+      },
+      "To age 75" => {
+        :id => 9,
+        :name => "To Age 75"
+      },
+      "To age 90" => {
+        :id => 10,
+        :name => "To Age 90"
+      },
+      "To age 95" => {
+        :id => 11,
+        :name => "To Age 95"
+      },
+      "To age 100" => {
+        :id => 12,
+        :name => "To Age 100"
+      },
+      "To age 105" => {
+        :id => 13,
+        :name => "To Age 105"
+      },
+      "To age 110" => {
+        :id => 14,
+        :name => "To Age 110"
+      },
+      "To age 121 (No Lapse U/L)" => {
+        :id => 15,
+        :name => "To Age 121 (No Lapse U/L)"
+      },
+      "To age 121 (Pay to 100)" => {
+        :id => 16,
+        :name => "To Age 121 - Pay to 100"
+      },
+      "15 Year Term ROP" => {
+        :id => 17,
+        :name => "15-Year Return of Premium"
+      },
+      "20 Year Term ROP" => {
+        :id => 18,
+        :name => "20-Year Return of Premium"
+      },
+      "25 Year Term ROP" => {
+        :id => 19,
+        :name => "25-Year Return of Premium"
+      },
+      "30 Year Term ROP" => {
+        :id => 20,
+        :name => "30-Year Return of Premium"
+      }
+    }
 
     PROTECTIVE_ETICKET_SUPPORTED_PRODUCTS = [42, 39, 2161, 2164, 40, 2162, 2163, 2165, 1412, 43]
 
