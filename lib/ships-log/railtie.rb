@@ -1106,25 +1106,25 @@ class ShipsLog < Rails::Railtie
           }
         }
       },
-      139 => {
-        "code" => "NORA",
-        "products" => {
-          1085 => {
-            "code" => "NDGA",
-            "name" => "ADDvantage 10"
-          },
-          1086 => {
-            "code" => "NDGA",
-            "name" => "ADDvantage 15"
-          },
-          175 => {
-            "code" => "NDGA",
-            "name" => "ADDvantage 20"
-          },
-          176 => {
-            "code" => "NDGA",
-            "name" => "ADDvantage 30"
-          }
+      # 139 => {
+      #   "code" => "NORA",
+      #   "products" => {
+      #     1085 => {
+      #       "code" => "NDGA",
+      #       "name" => "ADDvantage 10"
+      #     },
+      #     1086 => {
+      #       "code" => "NDGA",
+      #       "name" => "ADDvantage 15"
+      #     },
+      #     175 => {
+      #       "code" => "NDGA",
+      #       "name" => "ADDvantage 20"
+      #     },
+      #     176 => {
+      #       "code" => "NDGA",
+      #       "name" => "ADDvantage 30"
+      #     }
           # "" => {
           #   "code" => "NGGA",
           #   "name" => "Custom Guarantee Gen 8 ($25-249K)",
@@ -1194,8 +1194,8 @@ class ShipsLog < Rails::Railtie
           # "" => {
           #   "code" => "NUGA",
           #   "name" => "Guarantee Builder IUL4 to 95 ($25-$249K)",
-        }
-      },
+      #   }
+      # },
       1500 => {
         "code" => "CINN",
         "products" => {
