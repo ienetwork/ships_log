@@ -1717,6 +1717,7 @@ class ShipsLog < Rails::Railtie
     { "label" => "Lead Created", "value" => "lead_created" },
     { "label" => "Lead Updated", "value" => "lead_updated" },
     { "label" => "Member Created", "value" => "member_created" },
-    { "label" => "Underwriting Pre-screener Submitted", "value" => "uwp_created" }
+    { "label" => "Underwriting Pre-screener Submitted", "value" => "uwp_created" },
+    { "label" => "Carrier Forms Request", "value" => "forms_requested" }
   ]
 end
