@@ -526,6 +526,36 @@ class ShipsLog < Rails::Railtie
         :label => "Insure.io",
         :group => "CRM",
         :products => ["WebsiteQuoter"]
+      },
+      {
+        :value => "send_quote_as_email",
+        :label => "Email PDF",
+        :group => "Default",
+        :products => ["BgaQuoter"]
+      },
+      {
+        :value => "send_quote_as_text",
+        :label => "Text PDF",
+        :group => "Default",
+        :products => ["BgaQuoter"]
+      },
+      {
+        :value => "download_quotes_pdf",
+        :label => "Download PDF",
+        :group => "Default",
+        :products => ["BgaQuoter"]
+      },
+      {
+        :value => "request_forms",
+        :label => "Request Forms",
+        :group => "Default",
+        :products => ["BgaQuoter"]
+      },
+      {
+        :value => "standard_packet",
+        :label => "Standard Packet",
+        :group => "Default",
+        :products => ["BgaQuoter"]
       }
     ]
 
