@@ -1,12 +1,31 @@
 class ShipsLog < Rails::Railtie
   initializer "ships_log_initialization" do
+     HEALTH_CATEGORIES = [
+      "Standard",
+      "Standard Plus",
+      "Preferred",
+      "Preferred Plus"
+    ]
+
+    # These are broken out for the UI, but don't match how we structure them
+    # in Reagan. It's also how we display them in Poseidon/Dashboard
     GUARANTEED_UNIVERSAL_LIFE_PRODUCTS = [
       "To age 121 (No Lapse U/L)",
       "To age 121 (Pay to 65)",
       "To age 121 (Pay to 100)",
       "To age 121 (20 Pay)",
       "To age 121 (10 Pay)",
-      "To age 121 (Single Pay)"
+      "To age 121 (Single Pay)",
+      "To age 65",
+      "To age 70",
+      "To age 75",
+      "To age 80",
+      "To age 85",
+      "To age 90",
+      "To age 95",
+      "To age 100",
+      "To age 105",
+      "To age 110"
     ]
 
     TERM_LIFE_INSURANCE_PRODUCTS = [
@@ -22,16 +41,8 @@ class ShipsLog < Rails::Railtie
     ]
 
     OTHER_PRODUCTS = [
-      "To age 65",
-      "To age 70",
-      "To age 75",
-      "To age 80",
-      "To age 85",
-      "To age 90",
-      "To age 95",
-      "To age 100",
-      "To age 105",
-      "To age 110"
+      "Whole Life",
+      "Final Expense"
     ]
 
     ROP_PRODUCTS = [
@@ -52,13 +63,8 @@ class ShipsLog < Rails::Railtie
       "30 Year Term Simplified Issue"
     ]
 
-    HEALTH_CATEGORIES = [
-      "Standard",
-      "Standard Plus",
-      "Preferred",
-      "Preferred Plus"
-    ]
-
+    # This is how we structure product/product_type_detail in the hornet/reagan,
+    # NOT the UI
     PRODUCT_TYPE_DETAILS_BY_PRODUCT_TYPE = {
       "Term" => [
         "1 Year Term",
@@ -140,7 +146,6 @@ class ShipsLog < Rails::Railtie
         "To age 121 (10 Pay)",
         "To age 121 (Single Pay)"
       ],
-      "Whole Life" => [],
       "Simplified Issue Term" => [
         "1 Year Term Simplified Issue",
         "5 Year Term Simplified Issue",
@@ -169,6 +174,7 @@ class ShipsLog < Rails::Railtie
         "35 Year Term Simplified Issue",
         "40 Year Term Simplified Issue"
       ],
+      "Whole Life" => ["Whole Life"],
       "Final Expense" => ["Final Expense"]
     }
 
