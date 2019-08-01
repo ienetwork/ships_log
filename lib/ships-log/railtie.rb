@@ -1931,9 +1931,12 @@ class ShipsLog < Rails::Railtie
   ]
 
   NOTIFICATION_TRIGGERS = [
-    { "label" => "E-ticket Created", "value" => "eticket_created" },
-    { "label" => "E-ticket Sent", "value" => "eticket_sent" },
-    { "label" => "E-ticket Error", "value" => "eticket_error" },
+    { "label" => "E-Ticket - Started", "value" => "eticket_created" },
+    { "label" => "E-Ticket - Error", "value" => "eticket_error" },
+    { "label" => "E-Ticket - Sent", "value" => "eticket_sent" },
+    { "label" => "E-Application - New Application Started", "value" => "e_app_started" },
+    { "label" => "E-Application - Error", "value" => "e_app_error" },
+    { "label" => "E-Application - Application Completed", "value" => "e_app_completed" },
     { "label" => "Lead Created", "value" => "lead_created" },
     { "label" => "Lead Updated", "value" => "lead_updated" },
     { "label" => "Member Created", "value" => "member_created" },
