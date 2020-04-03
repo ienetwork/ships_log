@@ -568,6 +568,18 @@ class ShipsLog < Rails::Railtie
         :label => "PSG E-Application",
         :group => "E-Ticket",
         :products => ["BgaQuoter", "MobileApp"]
+      },
+      {
+        :value => "nmb_term_eticket",
+        :label => "National Mutual Benefit Term E-Ticket",
+        :group => "E-Ticket",
+        :products => ["BgaQuoter"]
+      },
+      {
+        :value => "nmb_whole_life_eticket",
+        :label => "National Mutual Benefit Whole Life E-Ticket",
+        :group => "E-Ticket",
+        :products => ["BgaQuoter"]
       }
     ]
 
