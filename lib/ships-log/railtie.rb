@@ -708,7 +708,21 @@ class ShipsLog < Rails::Railtie
       }
     }
 
-    PROTECTIVE_ETICKET_SUPPORTED_PRODUCTS = [42, 39, 2161, 2164, 40, 2162, 2163, 2165, 1412, 43]
+    PROTECTIVE_ETICKET_SUPPORTED_PRODUCTS = [
+      39,   # Custom Choice UL 10
+      40,   # Custom Choice UL 15
+      1412, # Custom Choice UL 20
+      42,   # Custom Choice UL 25
+      43,   # Custom Choice UL 30
+
+      2161, # Classic Choice Term 10
+      2162, # Classic Choice Term 15
+      2163, # Classic Choice Term 20
+      2164, # Classic Choice Term 25
+      2165, # Classic Choice Term 30
+      2446, # Classic Choice Term 35
+      2447  # Classic Choice Term 40
+    ]
 
     AGENT_INFORMATION_FIELDS = [
       "email",
