@@ -64,7 +64,7 @@ class ShipsLog < Rails::Railtie
     ]
 
     # This is how we structure product/product_type_detail in the hornet/reagan,
-    # NOT the UI
+    # NOT the customer UIs
     PRODUCT_TYPE_DETAILS_BY_PRODUCT_TYPE = {
       "Term" => [
         "1 Year Term",
@@ -175,7 +175,8 @@ class ShipsLog < Rails::Railtie
         "40 Year Term Simplified Issue"
       ],
       "Whole Life" => ["Whole Life"],
-      "Final Expense" => ["Final Expense"]
+      "Final Expense" => ["Final Expense"],
+      "Long Term Care" => ["Long Term Care"]
     }
 
     ROLES = ["member", "sales_rep", "admin"]
