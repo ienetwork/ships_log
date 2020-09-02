@@ -55,14 +55,6 @@ class ShipsLog < Rails::Railtie
       "To age 75 (ROP)"
     ]
 
-    SIMPLIFIED_ISSUE_PRODUCTS = [
-      "10 Year Term Simplified Issue",
-      "15 Year Term Simplified Issue",
-      "20 Year Term Simplified Issue",
-      "25 Year Term Simplified Issue",
-      "30 Year Term Simplified Issue"
-    ]
-
     # This is how we structure product/product_type_detail in the hornet/reagan,
     # NOT the customer UIs
     PRODUCT_TYPE_DETAILS_BY_PRODUCT_TYPE = {
@@ -146,34 +138,6 @@ class ShipsLog < Rails::Railtie
         "To age 121 (10 Pay)",
         "To age 121 (Single Pay)"
       ],
-      "Simplified Issue Term" => [
-        "1 Year Term Simplified Issue",
-        "5 Year Term Simplified Issue",
-        "10 Year Term Simplified Issue",
-        "12 Year Term Simplified Issue",
-        "15 Year Term Simplified Issue",
-        "16 Year Term Simplified Issue",
-        "17 Year Term Simplified Issue",
-        "18 Year Term Simplified Issue",
-        "19 Year Term Simplified Issue",
-        "20 Year Term Simplified Issue",
-        "21 Year Term Simplified Issue",
-        "22 Year Term Simplified Issue",
-        "23 Year Term Simplified Issue",
-        "24 Year Term Simplified Issue",
-        "25 Year Term Simplified Issue",
-        "26 Year Term Simplified Issue",
-        "27 Year Term Simplified Issue",
-        "28 Year Term Simplified Issue",
-        "29 Year Term Simplified Issue",
-        "30 Year Term Simplified Issue",
-        "31 Year Term Simplified Issue",
-        "32 Year Term Simplified Issue",
-        "33 Year Term Simplified Issue",
-        "34 Year Term Simplified Issue",
-        "35 Year Term Simplified Issue",
-        "40 Year Term Simplified Issue"
-      ],
       "Whole Life" => ["Whole Life"],
       "Final Expense" => ["Final Expense"],
       "Long Term Care" => ["Long Term Care"]
@@ -184,7 +148,7 @@ class ShipsLog < Rails::Railtie
     ANNUITY_PRODUCT_TYPES = ["Fixed Indexed","Multi-Year Guarantee (MYGA)","Single Premium Immediate (SPIA)","Traditional Fixed"]
     DISABILITY_PRODUCT_TYPES = ["Short Term","Long Term","Group","Supplemental Income"]
     LONG_TERM_CARE_PRODUCT_TYPES = ["Other"]
-    LIFE_PRODUCT_TYPES = ["Term","Term ROP","UL","Whole Life","Simplified Issue Term","Final Expense"]
+    LIFE_PRODUCT_TYPES = ["Term","Term ROP","UL","Whole Life","Final Expense"]
     LINES_OF_COVERAGE = ["Annuity","Life","Disability","Long Term Care"]
 
     IXN_HEALTH_CATEGORIES = ["Preferred Plus","Preferred","Standard Plus","Standard"]
@@ -624,9 +588,6 @@ class ShipsLog < Rails::Railtie
       "Whole Life" => {
         :id => 3
       },
-      "Simplified Issue Term" => {
-        :id => 8
-      },
       "Final Expense" => {
         :id => 1
       }
@@ -909,93 +870,6 @@ class ShipsLog < Rails::Railtie
             "MODAL_FACTOR",
             "RIDER_RATE",
             "TABLE_RATE_PERCENT"
-          ]
-        },
-        "flat_extra_fee" => {
-          "label" => "Flat Extra Fee",
-          "variables" => [
-            "FLAT_EXTRA_TOTAL",
-            "MODAL_FACTOR"
-          ]
-        },
-        "total" => {
-          "label" => "Total",
-          "variables" => [
-            "ADB_RIDER_FEE",
-            "BASE_PREMIUM",
-            "CHILD_RIDER_FEE",
-            "CHILD_WOP_RIDER_FEE",
-            "FLAT_EXTRA_FEE",
-            "MODAL_FACTOR",
-            "POLICY_FEE",
-            "TABLE_RATE_FEE",
-            "WOP_RIDER_FEE"
-          ]
-        }
-      },
-      "Simplified Issue Term" => {
-        "base_premium" => {
-          "label" => "Base Premium",
-          "variables" => [
-            "AGE_RATE",
-            "FACE_AMOUNT_IN_THOUSANDS",
-            "MODAL_FACTOR"
-          ]
-        },
-        "policy_fee" => {
-          "label" => "Policy Fee",
-          "variables" => [
-            "MODAL_FACTOR",
-            "POLICY_FEE"
-          ]
-        },
-        "table_rate_fee" => {
-          "label" => "Table Rate Fee",
-          "variables" => [
-            "AGE_RATE",
-            "BASE_PREMIUM",
-            "FACE_AMOUNT_IN_THOUSANDS",
-            "MODAL_FACTOR",
-            "TABLE_RATE_PERCENT"
-          ]
-        },
-        "adb_rider_fee" => {
-          "label" => "ADB Rider Fee",
-          "variables" => [
-            "MAX_BENEFIT_COVERAGE",
-            "MODAL_FACTOR",
-            "RIDER_RATE"
-          ]
-        },
-        "wop_rider_fee" => {
-          "label" => "WOP Rider Fee",
-          "variables" => [
-            "ADB_RIDER_FEE",
-            "BASE_PREMIUM",
-            "CHILD_RIDER_FEE",
-            "FACE_AMOUNT_IN_THOUSANDS",
-            "FLAT_EXTRA_FEE",
-            "MODAL_FACTOR",
-            "POLICY_FEE",
-            "RIDER_RATE",
-            "TABLE_RATE_FEE"
-          ]
-        },
-        "child_rider_fee" => {
-          "label" => "Child Rider Fee",
-          "variables" => [
-            "CHILD_RIDER_UNITS",
-            "COVERAGE_PER_UNIT",
-            "MODAL_FACTOR",
-            "RIDER_RATE"
-          ]
-        },
-        "child_wop_rider_fee" => {
-          "label" => "Combined Child/WOP Rider Fee",
-          "variables" => [
-            "CHILD_RIDER_UNITS",
-            "MODAL_FACTOR",
-            "RIDER_RATE"
           ]
         },
         "flat_extra_fee" => {
