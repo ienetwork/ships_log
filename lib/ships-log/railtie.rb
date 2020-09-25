@@ -439,6 +439,12 @@ class ShipsLog < Rails::Railtie
         :products => ["BgaQuoter", "MobileApp"]
       },
       {
+        :value => "sbli",
+        :label => "SBLI",
+        :group => "E-Ticket",
+        :products => ["BgaQuoter", "MobileApp"]
+      },
+      {
         :value => "typeform",
         :label => "TypeForm",
         :group => "Form",
