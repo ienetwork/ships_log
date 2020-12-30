@@ -514,13 +514,13 @@ class ShipsLog < Rails::Railtie
         :value => "send_quote_as_email",
         :label => "Email PDF",
         :group => "Default",
-        :products => ["BgaQuoter"]
+        :products => ["BgaQuoter", "MobileApp"]
       },
       {
         :value => "send_quote_as_text",
         :label => "Text PDF",
         :group => "Default",
-        :products => ["BgaQuoter"]
+        :products => ["BgaQuoter", "MobileApp"]
       },
       {
         :value => "download_quotes_pdf",
