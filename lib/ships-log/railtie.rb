@@ -445,6 +445,18 @@ class ShipsLog < Rails::Railtie
         :products => ["BgaQuoter", "MobileApp"]
       },
       {
+        :value => "firelight_eapp",
+        :label => "Firelight E-Application",
+        :group => "E-App",
+        :products => ["BgaQuoter"]
+      },
+      {
+        :value => "psg_eapp",
+        :label => "PSG E-Application",
+        :group => "E-App",
+        :products => ["BgaQuoter", "MobileApp"]
+      },
+      {
         :value => "typeform",
         :label => "TypeForm",
         :group => "Form",
@@ -539,12 +551,6 @@ class ShipsLog < Rails::Railtie
         :label => "Standard Packet",
         :group => "Default",
         :products => ["BgaQuoter"]
-      },
-      {
-        :value => "psg_eapp",
-        :label => "PSG E-Application",
-        :group => "E-Ticket",
-        :products => ["BgaQuoter", "MobileApp"]
       },
       {
         :value => "nmb_term_eticket",
