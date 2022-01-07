@@ -451,15 +451,9 @@ class ShipsLog < Rails::Railtie
         :products => ["BgaQuoter", "MobileApp"]
       },
       {
-        :value => "firelight_eticket",
-        :label => "Firelight E-Ticket",
-        :group => "E-Ticket",
-        :products => ["BgaQuoter"]
-      },
-      {
-        :value => "firelight_eapp",
-        :label => "Firelight E-Application",
-        :group => "E-App",
+        :value => "firelight",
+        :label => "Firelight",
+        :group => "Integrations",
         :products => ["BgaQuoter"]
       },
       {
