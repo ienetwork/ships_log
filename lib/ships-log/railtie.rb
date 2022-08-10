@@ -451,6 +451,12 @@ class ShipsLog < Rails::Railtie
         :products => ["BgaQuoter", "MobileApp"]
       },
       {
+        :value => "ethos",
+        :label => "Ethos",
+        :group => "Instant Issue",
+        :products => ["BgaQuoter", "MobileApp"]
+      },
+      {
         :value => "firelight",
         :label => "Firelight",
         :group => "Integrations",
@@ -569,12 +575,6 @@ class ShipsLog < Rails::Railtie
         :label => "National Mutual Benefit Whole Life E-Ticket",
         :group => "E-Ticket",
         :products => ["BgaQuoter"]
-      },
-      {
-        :value => "ethos",
-        :label => "Ethos",
-        :group => "Instant Issue",
-        :products => ["BgaQuoter", "MobileApp"]
       }
     ]
 
